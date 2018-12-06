@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Bitter";
+  src: url("Bitter-Regular.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Regular.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("Poppins-SemiBold.ttf")  format("truetype");
+}

@@ -1,0 +1,649 @@
+// Fix colors
+$text: #4c4c4c;
+$index: #2c7f66;
+$footer: #ebd0ad;
+$brochure: #ebd0ad;
+
+
+$brunell_color: #9aa2ac;
+$brunell_icon: "/img/icons/grain.svg";
+
+$finne_color: #b3aeb9;
+$finne_icon: "/img/icons/cabbage.svg";
+
+$grannas_color: #dfb349;
+$grannas_icon: "/img/icons/grain.svg";
+
+$grannasappel_color: #e35c48;
+$grannasappel_icon: "/img/icons/apple.svg";
+
+$granos_color: #a8c5a8;
+$granos_icon: "/img/icons/tomato.svg";
+
+$kramars_color: #406531;
+$kramars_icon: "/img/icons/grain.svg";
+
+$kvarnfors_color: #fbbc45;
+$kvarnfors_icon: "/img/icons/egg.svg";
+
+$martensson_color: #bb7e52;
+$martensson_icon: "/img/icons/cow.svg";
+
+$norrbro_color: #e9d9a1;
+$norrbro_icon: "/img/icons/sheep.svg";
+
+$nyborg_color: #d7b874;
+$nyborg_icon: "/img/icons/potato.svg";
+
+$skogsjo_color: #f1cbbc;
+$skogsjo_icon: "/img/icons/pig.svg";
+
+$smedis_color: #f3965a;
+$smedis_icon: "/img/icons/highland.svg";
+
+$stubb_color: #bd8d99;
+$stubb_icon: "/img/icons/cow.svg";
+
+$thesslund_color: #e35c48;
+$thesslund_icon: "/img/icons/tree.svg";
+
+
+html {
+
+  scroll-behavior: smooth;
+}
+
+body {
+  div {
+
+  }
+}
+.nobreak {
+  white-space: nowrap;
+}
+
+@mixin responsive-header($directory) {
+  .header {
+    background-image: url("/img/#{$directory}header_1920.jpg");
+  }
+  @media only screen and (max-width: 1280px)  {
+    .header {
+      background-image: url("/img/#{$directory}header_1280.jpg");
+    }
+  }
+  @media only screen and (max-width: 1080px)  {
+    .header {
+      background-image: url("/img/#{$directory}header_1080.jpg");
+    }
+  }
+  @media only screen and (max-width: 960px)  {
+    .header {
+      background-image: url("/img/#{$directory}header_960.jpg");
+    }
+  }
+  @media only screen and (max-width: 640px)  {
+    .header {
+      background-image: url("/img/#{$directory}header_640.jpg");
+    }
+  }
+}
+
+@mixin responsive-header-mobile($directory) {
+  @media (orientation: portrait) {
+    .header {
+      background-image: url("/img/#{$directory}header_mobile_1920.jpg");
+    }
+    @media only screen and (max-width: 800px)  {
+      .header {
+        background-image: url("/img/#{$directory}header_mobile_1280.jpg");
+      }
+    }
+    @media only screen and (max-width: 675px)  {
+      .header {
+        background-image: url("/img/#{$directory}header_mobile_1080.jpg");
+      }
+    }
+    @media only screen and (max-width: 600px)  {
+      .header {
+        background-image: url("/img/#{$directory}header_mobile_960.jpg");
+      }
+    }
+    @media only screen and (max-width: 400px)  {
+      .header {
+        background-image: url("/img/#{$directory}header_mobile_640.jpg");
+      }
+    }
+  }
+}
+
+@mixin body-style($name, $color, $icon) {
+  &.#{$name} {
+    h1, h2, h3, h4, h5 {
+      color: $color;
+    }
+    @include responsive-header($name + "/");
+    @include responsive-header-mobile($name + "/");
+    .intro {
+      background-color: $color;
+      color: white;
+      .name .icon {
+        background-image: url($icon);
+      }
+    }
+    .section h1.quote {
+      border-bottom: 1px solid $color;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  &:hover {
+    text-decoration: none;
+    outline: none;
+    opacity: 0.8;
+  }
+}
+body {
+  font-family: "Bitter";
+  background-color: white;
+  color: $text;
+
+  h1, h2, h3, h4, h5 {
+    font-family: "Poppins";
+  }
+
+
+  &.index {
+    h1, h2, h3, h4, h5 {
+      color: $index;
+    }
+    @include responsive-header("");
+    @include responsive-header-mobile("");
+    .section h1.quote {
+      border-bottom: 1px solid $index;
+    }
+  }
+
+  @include body-style("brunell", $brunell_color, $brunell_icon);
+  @include body-style("finne", $finne_color, $finne_icon);
+  @include body-style("grannas", $grannas_color, $grannas_icon);
+  @include body-style("grannasappel", $grannasappel_color, $grannasappel_icon);
+  @include body-style("granos", $granos_color, $granos_icon);
+  @include body-style("kramars", $kramars_color, $kramars_icon);
+  @include body-style("kvarnfors", $kvarnfors_color, $kvarnfors_icon);
+  @include body-style("martensson", $martensson_color, $martensson_icon);
+  @include body-style("norrbro", $norrbro_color, $norrbro_icon);
+  @include body-style("nyborg", $nyborg_color, $nyborg_icon);
+  @include body-style("skogsjo", $skogsjo_color, $skogsjo_icon);
+  @include body-style("smedis", $smedis_color, $smedis_icon);
+  @include body-style("stubb", $stubb_color, $stubb_icon);
+  @include body-style("thesslund", $thesslund_color, $thesslund_icon);
+}
+
+@media only screen and (max-width: 992px)  {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+
+.navbar {
+  background: transparent;
+  padding: 0 !important; // Override
+  .brand {
+    font-family: "Poppins-SemiBold";
+    font-size: 4rem;
+    padding: 0 !important; // Override
+    //line-height: 5rem;
+    margin-left: 2rem;
+    outline: none;
+  }
+  a {
+    color: white;
+  }
+  .navbar-nav {
+    margin-right: 2rem;
+    text-align: center;
+  }
+  .nav-item {
+    font-family: "Poppins-SemiBold";
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-right: 1.3rem;
+  }
+  .navbar-toggler[aria-expanded="false"] {
+    .open {
+      display: none;
+    }
+  }
+  .navbar-toggler[aria-expanded="true"] {
+    .closed {
+      display: none;
+    }
+  }
+  .navbar-toggler {
+    outline: none;
+  }
+  .navbar-toggler-icon {
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 992px)  {
+
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.3); // Kasper kommer int att digga ;D
+
+    .brand {
+      font-size: 2rem;
+      margin: 0.4rem 0 0.4rem 2rem;
+    }
+    .navbar-nav {
+      margin-right: 0;
+    }
+    .nav-item {
+      margin-right: 0;
+    }
+    .navbar-toggler {
+      margin-right: 20px;
+    }
+  }
+}
+
+.header {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  .header-text {
+    &.bottom {
+      align-items:flex-end;
+      padding-bottom: 4rem;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 82vh;
+
+    font-family: "Poppins-SemiBold";
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: 4.4rem;
+    margin: 0 4rem;
+    line-height: 5rem;
+    //margin-top: 18rem;
+  }
+}
+
+@media only screen and (max-width: 992px)  {
+  .header .header-text {
+    .margin-top {
+      //margin-top: 3rem;
+    }
+    font-size: 2rem;
+    margin: 0 1rem;
+    line-height: 2.6rem;
+    //margin-top: 12rem;
+  }
+}
+
+.intro {
+  padding: 6rem 1rem;
+  .name, .location {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.3rem;
+    .icon, .text {
+      display: inline-block;
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-family: "Poppins-SemiBold";
+      font-size: 1.2rem;
+    }
+  }
+  .article-icon {
+    display: inline-block;
+    vertical-align: middle;
+    img {
+      height: 3.3rem;
+      width: auto;
+    }
+  }
+  .intro-text-col {
+    // Align vertically on the middle
+    display:flex;
+    align-items:center;
+    .intro-text {
+      font-size: 2rem;
+      padding-right: 3rem;
+
+      p {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        padding-left: 1.5rem;
+        padding-right: 0.4rem;
+      }
+    }
+  }
+  .info {
+    height: 100%;
+    padding-left: 3rem;
+    border-left: 1px solid white;
+    .info-section {
+      margin-top: 2rem;
+      .info-header {
+        font-family: "Poppins-SemiBold";
+        text-transform: uppercase;
+        font-size: 1.2rem;
+      }
+      .info-row {
+        font-family: "Poppins";
+        font-size: 1.2rem;
+        margin-top: 0.4rem;
+      }
+    }
+  }
+  .name .text {
+    margin-right: 1.6rem;
+  }
+  .location .icon {
+    height: 4rem;
+    width: 3rem;
+    background-image: url("/img/icons/location.svg");
+  }
+}
+
+@media only screen and (max-width: 768px)  {
+  .intro {
+    padding: 4rem 1rem;
+    .info {
+      padding-left: 0;
+      border-left: 0;
+
+      padding-bottom: 4rem;
+      border-bottom: 1px solid white;
+    }
+    .intro-text-col .intro-text {
+      padding-right: 0;
+
+      padding-top: 4rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+
+.section {
+  padding: 0;
+  padding-top: 6rem;
+  text-align: center;
+
+  &.no-padding {
+    padding: 0;
+  }
+
+  h1 {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    &.quote {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .free-text {
+    padding: 5rem 0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 2.3rem;
+    text-align: left;
+    font-size: 1.3rem;
+    p {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      padding-left: 1.5rem;
+      padding-right: 0.4rem;
+    }
+  }
+
+}
+.image {
+  &.image-vertical {
+    img {
+      max-height: 100vh;
+    }
+  }
+  &.image-horizontal {
+    img {
+      max-width: 100%;
+    }
+  }
+  img {
+
+  }
+}
+
+@media only screen and (max-width: 992px)  {
+  .section {
+    padding-top: 4rem;
+    //padding-bottom: 4rem;
+  }
+}
+.read-more {
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  h1 {
+    margin-top: 0;
+    margin-bottom: 17rem;
+  }
+}
+.article-list {
+  text-align: center;
+  h1 {
+    font-size: 3rem;
+  }
+  .container {
+    width: 100%;
+    margin: 0 !important;
+    max-width: 100%;
+    .col-12, .col-md-6 {
+      padding: 0 !important;
+    }
+    .article-list-entry {
+      text-align: left;
+      height: 30vw;
+      max-height: 520px;
+      background-position: center;
+      background-size: cover;
+      color: white;
+      .article-list-overlay {
+        position: relative;
+        padding: 2rem;
+        height: 100%;
+        width: 100%;
+        &:hover {
+          background-color: transparentize($index, 0.2);
+          transition-duration: 0.3s;
+
+          .buy {
+            color: white !important;
+          }
+        }
+        h1 {
+          font-family: "Poppins-SemiBold";
+          color: white;
+          max-width: 45%;
+          //font-size: 2.8rem;
+          font-size: 2.3vw;
+        }
+        .article-list-footer {
+          position: absolute;
+          bottom: 2rem;
+          left: 2rem;
+          .name, .location {
+            display: inline-block;
+            vertical-align: middle;
+            .icon, .text {
+              display: inline-block;
+              vertical-align: middle;
+              text-transform: uppercase;
+              font-family: "Poppins-SemiBold";
+              font-size: 1.1vw;
+            }
+          }
+          .article-icon {
+            display: inline-block;
+            vertical-align: middle;
+            img {
+              height: 3.3rem;
+              width: auto;
+            }
+          }
+
+          .name .text {
+            margin-right: 2rem;
+          }
+
+          .buy {
+            text-transform: uppercase;
+            font-family: "Poppins-SemiBold";
+            font-size: 1.1vw;
+            color: $index;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px)  {
+  .article-list .container .article-list-entry {
+    //height: 400px !important;
+    min-height: 240px;
+
+    .article-list-overlay {
+      padding: 1rem;
+      h1 {
+        font-size: 1.2rem;
+        max-width: 60%;
+      }
+      .article-list-footer {
+        bottom: 1rem;
+        left: 1rem;
+        .name, .location {
+          .text {
+            font-size: 0.7rem;
+          }
+        }
+        .buy {
+          font-size: 0.7rem;
+        }
+        .icon {
+          margin-bottom: -0.2rem;
+          margin-right: 6px;
+          width: 0.8rem;
+          height: 1.6rem;
+        }
+        .name .text {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@mixin article-entry($name, $icon, $special) {
+  &.#{$name} {
+    @if $special == true {
+      background-image: url("/img/#{$name}/article.jpg");
+    } @else {
+      background-image: url("/img/#{$name}/header_960.jpg");
+    }
+    background-position: top left;
+    .name .icon {
+      background-image: url($icon);
+    }
+  }
+}
+
+.article-list-entry {
+  &.brochure {
+    background-image: url("/img/brochure-background.jpg");
+    .article-list-overlay h1 {
+      max-width: 30% !important;
+    }
+
+    @media only screen and (max-width: 768px)  {
+      .article-list-overlay h1 {
+        max-width: 60% !important;
+      }
+    }
+  }
+  @include article-entry("brunell", $brunell_icon, false);
+  @include article-entry("finne", $finne_icon, true);
+  @include article-entry("grannas", $grannas_icon, false);
+  @include article-entry("grannasappel", $grannasappel_icon, false);
+  @include article-entry("granos", $granos_icon, true);
+  @include article-entry("kramars", $kramars_icon, false);
+  @include article-entry("kvarnfors", $kvarnfors_icon, false);
+  @include article-entry("martensson", $martensson_icon, false);
+  @include article-entry("norrbro", $norrbro_icon, false);
+  @include article-entry("nyborg", $nyborg_icon, false);
+  @include article-entry("skogsjo", $skogsjo_icon, false);
+  @include article-entry("smedis", $smedis_icon, false);
+  @include article-entry("stubb", $stubb_icon, false);
+  @include article-entry("thesslund", $thesslund_icon, false);
+}
+
+.footer {
+  background-color: $brochure;
+  .footer-overlay {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    background-image: url("/img/footer.jpg");
+    min-height: 900px;
+    padding: 3rem;
+    .content {
+      font-family: "Poppins-SemiBold";
+      width: 30%;
+      margin-top: 5rem;
+      a {
+        color: $index;
+
+      }
+      span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+      }
+      h1 {
+        color: white;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px)  {
+  .footer .footer-overlay {
+    min-height: 0 !important;
+    background-size: contain;
+    background-position: bottom right;
+    .content {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      width: auto;
+      height: 400px;
+    }
+  }
+}

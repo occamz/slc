@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://bonde.slc.fi/smedis/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/finne/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/kramars/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/martensson/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/norrbro/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/skogsjo/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/grannas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/brunell/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/kvarnfors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/grannasappel/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/nyborg/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/thesslund/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/granos/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bonde.slc.fi/stubb/</loc>
+  </url>
+  
+</urlset>
